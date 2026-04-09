@@ -2,23 +2,27 @@ import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
 import { theme } from '../../styles/global'
 
 export default function TaskCard({ item, onDelete, onEdit }) {
-  const priorityColor = theme.colors.priority[item.priority] || theme.colors.textSub
+  // normaliza prioridade para bater com o theme
+  const normalizePriority = (p) => {
+    if (!p) return ''
+    const lower = p.toLowerCase()
+    if (lower === 'alta') return 'Alta'
+    if (lower === 'media' || lower === 'média') return 'Média'
+    if (lower === 'baixa') return 'Baixa'
+    return p
+  }
+
+  const priorityKey = normalizePriority(item.priority)
+  const priorityColor = theme.colors.priority[priorityKey] || theme.colors.textSub
 
   return (
     <View style={[styles.card, { borderLeftColor: priorityColor }]}>
-      <View style={{ flex: 1 }}>
-        <Text style={styles.title}>{item.title}</Text>
-      </View>
+      <Text style={styles.title}>{item.title}</Text>
+      <Text style={styles.description}>{item.description}</Text>
 
-      <View style={{ flex: 1 }}>
-        <Text style={styles.description}>{item.description}</Text>
-      </View>
-
-      <View style={{ flex: 1 }}>
-        <Text style={[styles.badge, { color: priorityColor }]}>
-          • {item.priority} {item.badge}
-        </Text>
-      </View>
+      <Text style={[styles.badge, { color: priorityColor }]}>
+        • {priorityKey}
+      </Text>
 
       <View style={styles.dateContainer}>
         <Text style={styles.dateText}>
