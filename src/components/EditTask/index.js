@@ -39,6 +39,27 @@ export default function EditTask({ visible, taskData, onSave, onClose }) {
                     style={styles.input}
                     onChangeText={d => setCurrentTask({ ...currentTask, description: d })}
                 />
+
+                <TextInput
+                    placeholder='Prioridade (alta / média / baixa)'
+                    value={currentTask?.priority}
+                    style={styles.input}
+                    onChangeText={p => setCurrentTask({ ...currentTask, priority: p })}
+                />
+
+                <TextInput
+                    placeholder='Data de início (DD/MM)'
+                    value={currentTask?.start}
+                    style={styles.input}
+                    onChangeText={s => setCurrentTask({ ...currentTask, start: s })}
+                />
+
+                <TextInput
+                    placeholder='Data de término (DD/MM)'
+                    value={currentTask?.end}
+                    style={styles.input}
+                    onChangeText={e => setCurrentTask({ ...currentTask, end: e })}
+                />
             </View>
             <TouchableOpacity
                 style={styles.button}
