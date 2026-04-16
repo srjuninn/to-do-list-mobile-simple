@@ -1,5 +1,6 @@
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
+import { View, Text, TouchableOpacity } from 'react-native'
 import { theme } from '../../styles/global'
+import styles from './style'
 
 export default function TaskCard({ item, onDelete, onEdit }) {
   // normaliza prioridade para bater com o theme
@@ -34,7 +35,7 @@ export default function TaskCard({ item, onDelete, onEdit }) {
         <TouchableOpacity onPress={() => onEdit(item)}>
           <Text style={styles.icon}>✏️ Editar</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => onDelete(item)}>
+        <TouchableOpacity onPress={() => onDelete(item.id)}>
           <Text style={styles.icon}>❌ Excluir</Text>
         </TouchableOpacity>
       </View>
