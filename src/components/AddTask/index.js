@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Modal, View, Text, TextInput, TouchableOpacity } from 'react-native'
-import styles from './styles'
+import { styles } from './styles'
 
 export default function AddTask({ visible, onSave, onClose }) {
     const [task, setTask] = useState({
@@ -63,7 +63,7 @@ export default function AddTask({ visible, onSave, onClose }) {
                 />
 
                 <TouchableOpacity style={styles.button} onPress={handleSave}>
-                    <Text>Salvar tarefa</Text>
+                    <Text style={styles.txtSalvar}>Salvar tarefa</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity onPress={onClose}>
