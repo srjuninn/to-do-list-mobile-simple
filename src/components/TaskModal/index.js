@@ -1,5 +1,5 @@
 import { Modal, View, Text, TextInput, TouchableOpacity } from 'react-native'
-import styles from './styles'
+import { styles } from './styles'
 import { useEffect, useState } from 'react'
 
 export default function TaskModal({ visible, onClose, onSave, taskToEdit }) {
