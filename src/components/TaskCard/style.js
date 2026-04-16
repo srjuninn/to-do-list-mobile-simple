@@ -1,3 +1,6 @@
+import { StyleSheet } from 'react-native'
+import { theme } from '../../styles/global'
+
 const styles = StyleSheet.create({
   card: {
     backgroundColor: '#fff',
@@ -40,3 +43,5 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 })
+
+export default styles
