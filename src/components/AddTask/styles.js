@@ -24,7 +24,10 @@ export const styles = StyleSheet.create({
         backgroundColor: theme.colors.primary,
         padding: 15,
         borderRadius: 10,
-        alignItems: 'center'
+        alignItems: 'center',
+    },
+    txtSalvar:{
+        color: '#fff'
     },
     txtCancelar: {
         color: '#f00',
